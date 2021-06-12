@@ -5,18 +5,9 @@ using UnityEngine;
 public class hitButton : MonoBehaviour {
     public Enemy enemy;
 
-    // Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public void OnMouseDown()
+    public void OnBtn()
     {
-        enemy.nowBlood = enemy.nowBlood - 100;
+        enemy.GetAnimator().SetBool("hitOrNot", true);
+        enemy.nowBlood = enemy.nowBlood - 50;
     }
 }
