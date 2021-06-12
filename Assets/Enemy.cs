@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 		if(this.isDead())
         {
+            Debug.Log("he is dead!!");
             level.nextLevel();
             updateBlood();
             this.animator.SetBool("deadOrNot", false);
