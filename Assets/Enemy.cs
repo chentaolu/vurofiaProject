@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour {
         {
             level.nextLevel();
             updateBlood();
+            this.animator.SetBool("deadOrNot", false);
         }
         else
         {
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour {
     {
         if (nowBlood <= 0)
         {
-            this.animator.SetBool("deadOrNoot", true);
+            this.animator.SetBool("deadOrNot", true);
             return true;
         } else
         {
