@@ -4,31 +4,41 @@ using UnityEngine;
 using System.Threading;
 
 public class Enemy : MonoBehaviour {
-    private Animator animator;
+    public Animator animator;
     public Level level;
     public int Armor;
     public int nowBlood;
+    public health health;
+    public bool beHit;
+
 	// Use this for initialization
 	void Start () {
         this.nowBlood = 100 * level.nowLevel;
         this.Armor = 10 * level.nowLevel;
         this.animator = GetComponent<Animator>();
+        this.beHit = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-		if(this.isDead())
+        if(this.beHit)
         {
-            Debug.Log("he is dead!!");
-            level.nextLevel();
-            updateBlood();
-            Debug.Log("init to false");
-            this.animator.SetBool("deadOrNot", false);
-            this.animator.SetBool("hitOrNot", false);
+            this.animator.SetBool("hitOrNot", beHit);
+            this.beHit = false;
         }
         else
         {
-
+            this.animator.SetBool("hitOrNot", beHit);
+        }
+        
+		if(this.isDead())
+        {
+            level.nextLevel();
+            updateBlood();
+        }
+        else
+        {
+            this.animator.SetBool("deadOrNot", false);
         }
 	}
 
@@ -53,4 +63,5 @@ public class Enemy : MonoBehaviour {
     {
         return this.animator;
     }
+
 }
