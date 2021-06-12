@@ -5,11 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     public Level level = new Level();
+    public int Armor;
     public int nowBlood;
 	// Use this for initialization
 	void Start () {
         this.nowBlood = 100 * level.nowLevel;
-	}
+        this.Armor = 10 * level.nowLevel;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
