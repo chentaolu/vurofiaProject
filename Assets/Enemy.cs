@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-
+    private Animator animator;
     public Level level = new Level();
     public int Armor;
     public int nowBlood;
@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour {
 	void Start () {
         this.nowBlood = 100 * level.nowLevel;
         this.Armor = 10 * level.nowLevel;
-
+        this.animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour {
     {
         if (nowBlood <= 0)
         {
+            this.animator.SetBool("deadOrNoot", true);
             return true;
         } else
         {
@@ -42,6 +43,5 @@ public class Enemy : MonoBehaviour {
     {
         this.nowBlood = 100 * level.nowLevel;
     }
-
 
 }
