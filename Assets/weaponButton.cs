@@ -27,12 +27,14 @@ public class weaponButton : MonoBehaviour
 
 	void initSpritesList()
 	{
+		Sprite weapon0 = Resources.Load<Sprite>("weapon/Knife");
 		Sprite weapon1 = Resources.Load<Sprite>("weapon/UMP-45");
 		Sprite weapon2 = Resources.Load<Sprite>("weapon/Skorpion_VZ");
 		Sprite weapon3 = Resources.Load<Sprite>("weapon/M4A1");
 		Sprite weapon4 = Resources.Load<Sprite>("weapon/Ak-47");
 		Sprite weapon5 = Resources.Load<Sprite>("weapon/Smoke_Grenade");
 		Sprite weapon6 = Resources.Load<Sprite>("weapon/ACOG_Sight");
+		spritesList.Add(weapon0);
 		spritesList.Add(weapon1);
 		spritesList.Add(weapon2);
 		spritesList.Add(weapon3);
@@ -49,5 +51,11 @@ public class weaponButton : MonoBehaviour
 			index = 0;
         }
 		targetImage = spritesList[index];
+		if (index == 0)
+        {
+			changeButton.changeIcon(0);
+        } else {
+			changeButton.changeIcon(1);
+        }
 	}
 }
