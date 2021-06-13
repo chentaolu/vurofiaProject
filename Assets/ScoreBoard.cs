@@ -28,7 +28,7 @@ public class ScoreBoard : MonoBehaviour
 
     private void Start()
     {
-        Score = 0;
+        Score = 100;
     }
 
     void Update()
