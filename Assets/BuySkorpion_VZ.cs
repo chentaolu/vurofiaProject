@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BuySkorpion_VZ : MonoBehaviour {
-    static bool hasBeenBuy = false;
+    public static bool hasBeenBuy = false;
 	// Use this for initialization
 	void Start () {
 		
