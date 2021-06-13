@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour {
         int second = (int)this.timer % 60 + 1;
         if (second % attackSecond() == 0)
         {
-            this.animator.SetBool("attackOrNot", false);
+            this.animator.SetBool("attackOrNot", true);
         }
         else
         {
