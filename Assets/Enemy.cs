@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour {
     public float precentBlood;
     public health health;
     public bool beHit;
+    public float timer = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +27,17 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        this.timer += Time.deltaTime;
+        int second = (int)this.timer % 60 + 1;
+        if (second % attackSecond() == 0)
+        {
+            this.animator.SetBool("attackOrNot", false);
+        }
+        else
+        {
+            this.animator.SetBool("attackOrNot", false);
+        }
 
         health.currentHealth  = precentBlood;
         if(this.beHit)
@@ -75,4 +87,13 @@ public class Enemy : MonoBehaviour {
         return this.animator;
     }
 
+    public int attackSecond()
+    {
+        int attackSec = 10 - (this.level.nowLevel * 2);
+        if (attackSec <= 2)
+        {
+            attackSec = 2;
+        }
+        return attackSec;
+    }
 }
