@@ -6,6 +6,7 @@ using System.Threading;
 public class Enemy : MonoBehaviour {
     public Animator animator;
     public Level level;
+    public Player_health player_health;
     public int Armor;
     public float nowBlood;
     public float maxBlood;
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour {
     public health health;
     public bool beHit;
     public float timer = 0;
+    public float temp;
+    public bool eventCheck = true;
 
 	// Use this for initialization
 	void Start () {
@@ -27,12 +30,18 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        string[] tem = new string[2];
         this.timer += Time.deltaTime;
-        int second = (int)this.timer % 60 + 1;
-        if (second % attackSecond() == 0)
+        float second = this.timer % 60 + 1;
+        float temp = second % attackSecond();
+        string t = temp.ToString("0.0");
+        
+        if (t == "0.0" && this.eventCheck == true)
         {
-            this.animator.SetBool("attackOrNot", true);
+            if(temp < 0.0165){
+                this.animator.SetBool("attackOrNot", true);
+                player_health.currentHealth -= 10;
+            }              
         }
         else
         {
@@ -54,6 +63,7 @@ public class Enemy : MonoBehaviour {
         {
             level.nextLevel();
             updateBlood();
+            this.timer = 0;
         }
         else
         {
@@ -64,7 +74,7 @@ public class Enemy : MonoBehaviour {
     public bool isDead()
     {
         if (nowBlood <= 0)
-        {
+        {   
             this.animator.SetBool("deadOrNot", true);
             return true;
         } else
@@ -87,9 +97,9 @@ public class Enemy : MonoBehaviour {
         return this.animator;
     }
 
-    public int attackSecond()
+    public float attackSecond()
     {
-        int attackSec = 10 - (this.level.nowLevel * 2);
+        float attackSec = 10 - (this.level.nowLevel * 2);
         if (attackSec <= 2)
         {
             attackSec = 2;
