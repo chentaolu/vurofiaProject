@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player_health : MonoBehaviour {
-	public int maxHealth;
-	public int currentHealth;
+	public float maxHealth;
+	public float currentHealth;
 	public float precentHealth;
 	public RectTransform HealthBar,Hurt;
 	// Use this for initialization
