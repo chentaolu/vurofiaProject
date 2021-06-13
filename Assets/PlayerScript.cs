@@ -29,5 +29,15 @@ public class PlayerScript : MonoBehaviour {
 		
 	}
 
-
+    public List<WeaponConfig> getCanUseList() {
+        List<WeaponConfig> canUseWeaponList = new List<WeaponConfig>();
+        foreach(WeaponConfig weapon in weaponConfigs)
+        {
+            if (weapon.isWeaponCanUse)
+            {
+                canUseWeaponList.Add(weapon);
+            }
+        }
+        return canUseWeaponList;
+    }
 }
