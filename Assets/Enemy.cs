@@ -34,32 +34,31 @@ public class Enemy : MonoBehaviour {
         string[] tem = new string[2];
         this.timer += Time.deltaTime;
         float second = this.timer % 60 + 1;
-        int temp = (int)(second % attackSecond());
-        string t = temp.ToString();
-        /*tem[1] = tem[0];
+        float temp = second % attackSecond();
+        print(temp);
+        string t = temp.ToString("0.0");
+        print(t);
+        tem[1] = tem[0];
         tem[0] = t;
         if (tem[1] == tem[0]) {
             this.eventCheck = false;
         }
         else {
             this.eventCheck = true;
-        }*/
-        print(temp);
-        
-        if (temp == 8 && this.eventCheck == true)
-        {
-            player_health.currentHealth -= 10;
-            this.animator.SetBool("attackOrNot", true);           
-            print(player_health.currentHealth);
-            this.eventCheck = false;     
         }
-        else if (temp == 0 && this.eventCheck == false) {
-            this.eventCheck = true;
+        
+        
+        if (t == "0.0" && this.eventCheck == true)
+        {
+            if(temp < 0.0175){
+                this.animator.SetBool("attackOrNot", true);
+                player_health.currentHealth -= 10;
+                print(player_health.currentHealth);
+            }              
         }
         else
         {
             this.animator.SetBool("attackOrNot", false);
-
         }
 
         health.currentHealth  = precentBlood;
