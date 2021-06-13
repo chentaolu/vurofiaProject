@@ -7,13 +7,18 @@ public class Enemy : MonoBehaviour {
     public Animator animator;
     public Level level;
     public int Armor;
-    public int nowBlood;
+    public float nowBlood;
+    public float maxBlood;
+    public float precentBlood;
     public health health;
     public bool beHit;
 
 	// Use this for initialization
 	void Start () {
-        this.nowBlood = 100 * level.nowLevel;
+        this.maxBlood = 100 * level.nowLevel;
+        this.nowBlood = this.maxBlood;
+        this.precentBlood = this.maxBlood / this.maxBlood * 100;
+        health.maxHealth = this.precentBlood;
         this.Armor = 10 * level.nowLevel;
         this.animator = GetComponent<Animator>();
         this.beHit = false;
@@ -21,6 +26,8 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        health.currentHealth  = precentBlood;
         if(this.beHit)
         {
             this.animator.SetBool("hitOrNot", beHit);
@@ -56,7 +63,11 @@ public class Enemy : MonoBehaviour {
 
     public void updateBlood()
     {
-        this.nowBlood = 100 * level.nowLevel;
+        this.maxBlood = 100 * level.nowLevel;
+        this.nowBlood = this.maxBlood;
+        precentBlood = this.nowBlood / this.nowBlood * 100;
+        health.maxHealth = precentBlood;
+        health.Hurt.sizeDelta = new Vector2(this.maxBlood / this.maxBlood * 100, health.Hurt.sizeDelta.y);
     }
 
     public Animator GetAnimator()
