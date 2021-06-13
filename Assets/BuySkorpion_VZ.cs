@@ -3,36 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BuyUMP_45 : MonoBehaviour {
+public class BuySkorpion_VZ : MonoBehaviour {
     static bool hasBeenBuy = false;
-
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {	
+	void Update () {
+		
 	}
 
     public void OnBtn()
     {
         if (!hasBeenBuy)
         {
-            if (ScoreBoard.Score < 100)
+            if (ScoreBoard.Score < 200)
             {
 
             }
             else
             {
-                ScoreBoard.Score -= 100;
-                GameObject.Find("BuyUMP45").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
+                ScoreBoard.Score -= 200;
+                GameObject.Find("BuySkorpion_VZ").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
                 hasBeenBuy = true;
             }
         }
         else
         {
-            GameObject.Find("BuyUMP45").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
+            GameObject.Find("BuySkorpion_VZ").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
         }
     }
 }
