@@ -30,30 +30,17 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        char temp1;
         string[] tem = new string[2];
         this.timer += Time.deltaTime;
         float second = this.timer % 60 + 1;
         float temp = second % attackSecond();
-        print(temp);
         string t = temp.ToString("0.0");
-        print(t);
-        tem[1] = tem[0];
-        tem[0] = t;
-        if (tem[1] == tem[0]) {
-            this.eventCheck = false;
-        }
-        else {
-            this.eventCheck = true;
-        }
-        
         
         if (t == "0.0" && this.eventCheck == true)
         {
-            if(temp < 0.0175){
+            if(temp < 0.0165){
                 this.animator.SetBool("attackOrNot", true);
                 player_health.currentHealth -= 10;
-                print(player_health.currentHealth);
             }              
         }
         else
