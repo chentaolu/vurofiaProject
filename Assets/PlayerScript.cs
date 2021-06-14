@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour {
-    public int health = 100;
     public Player_health player_health;
     public int weaponAttackValue;
     public Ak_47Config ak47_config;
@@ -26,8 +25,8 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     public List<WeaponConfig> getCanUseList() {
         List<WeaponConfig> canUseWeaponList = new List<WeaponConfig>();
@@ -39,5 +38,14 @@ public class PlayerScript : MonoBehaviour {
             }
         }
         return canUseWeaponList;
+    }
+
+    public void playerInToNextLevel()
+    {
+        player_health.currentHealth += 30;
+        if (player_health.currentHealth > 100)
+        {
+            player_health.currentHealth = 100;
+        }
     }
 }
