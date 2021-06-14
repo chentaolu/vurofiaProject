@@ -56,14 +56,6 @@ public class weaponButton : MonoBehaviour
 	void updateSpritesList()
     {
 		List<WeaponConfig> canUseList = playerScript.getCanUseList();
-		if (canUseList.Count > 1)
-		{
-			print("success");
-		}
-		else
-        {
-			print("fail");
-        }
 		if (canUseList.Count > canUseListLength)
         {
 			canUseListLength = canUseList.Count;
@@ -96,14 +88,12 @@ public class weaponButton : MonoBehaviour
 	public void changeItems()
 	{
 		index++;
-		print(spritesList.Count);
 		if (index > spritesList.Count - 1)
         {
 			index = 0;
         }
 
 		targetImage = spritesList[index];
-		print(targetImage);
 
 		if (index == 0)
         {

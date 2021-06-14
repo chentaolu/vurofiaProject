@@ -19,7 +19,6 @@ public class BuyCannon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(CannonConfig.isWeaponCanUse);
         CannonConfig.isWeaponCanUse = hasBeenBuy;
     }
 
