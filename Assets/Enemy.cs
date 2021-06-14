@@ -5,7 +5,6 @@ using System.Threading;
 
 public class Enemy : MonoBehaviour {
     public Animator animator;
-    public Level level;
     public PlayerScript player;
     public int Armor;
     public float nowBlood;
@@ -20,11 +19,11 @@ public class Enemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        this.maxBlood = 100 * level.nowLevel;
+        this.maxBlood = 100 * Level.nowLevel;
         this.nowBlood = this.maxBlood;
         this.precentBlood = this.maxBlood / this.maxBlood * 100;
         health.maxHealth = this.precentBlood;
-        this.Armor = 10 * level.nowLevel;
+        this.Armor = 10 * Level.nowLevel;
         this.animator = GetComponent<Animator>();
         this.beHit = false;
     }
@@ -38,7 +37,7 @@ public class Enemy : MonoBehaviour {
         
         if (t == "0.0" && this.eventCheck == true)
         {
-            if(temp < 0.0165 + (float)level.nowLevel * 0.0003){
+            if(temp < 0.0165 + (float)Level.nowLevel * 0.0003){
                 this.animator.SetBool("attackOrNot", true);
                 player.player_health.currentHealth -= attackValue;
             }              
@@ -61,7 +60,7 @@ public class Enemy : MonoBehaviour {
         
 		if(this.isDead())
         {
-            level.nextLevel();
+            Level.nextLevel();
             updateToNextLevel();
             this.timer = 0;
             player.playerInToNextLevel();
@@ -86,8 +85,8 @@ public class Enemy : MonoBehaviour {
 
     public void updateToNextLevel()
     {
-        attackValue = (float)(10 * (((float)this.level.nowLevel * 0.25) + 1));
-        this.maxBlood = 100 * level.nowLevel;
+        attackValue = (float)(10 * (((float)Level.nowLevel * 0.25) + 1));
+        this.maxBlood = 100 * Level.nowLevel;
         this.nowBlood = this.maxBlood;
         precentBlood = this.nowBlood / this.nowBlood * 100;
         health.maxHealth = precentBlood;
@@ -101,7 +100,7 @@ public class Enemy : MonoBehaviour {
 
     public float attackSecond()
     {
-        float attackSec = 10 - (this.level.nowLevel * 2);
+        float attackSec = 10 - (Level.nowLevel * 2);
         if (attackSec <= 2)
         {
             attackSec = 2;

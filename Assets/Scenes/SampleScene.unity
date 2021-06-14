@@ -286,7 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   level: {fileID: 344154016}
-  player_health: {fileID: 219518477}
+  player: {fileID: 892779980}
   Armor: 0
   nowBlood: 0
   maxBlood: 0
@@ -295,6 +295,7 @@ MonoBehaviour:
   beHit: 0
   timer: 0
   temp: 0
+  attackValue: 10
   eventCheck: 1
 --- !u!4 &93850245 stripped
 Transform:
@@ -401,6 +402,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWeaponCanUse: 0
+  usingNow: 0
+  attackValue: 100
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWeaponCanUse: 0
+  usingNow: 0
+  attackValue: 125
 --- !u!1 &455359064
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWeaponCanUse: 0
+  usingNow: 0
+  attackValue: 20
 --- !u!1 &668617861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1442,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWeaponCanUse: 0
+  usingNow: 0
+  attackValue: 30
 --- !u!1 &892779978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,7 +1489,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295b7468d1a83c64abb9105ed10f2242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   player_health: {fileID: 219518477}
   weaponAttackValue: 0
   ak47_config: {fileID: 449020714}
@@ -2291,6 +2299,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isWeaponCanUse: 0
+  usingNow: 0
+  attackValue: 70
 --- !u!1 &1766020560
 GameObject:
   m_ObjectHideFlags: 0
@@ -2595,7 +2605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   level: {fileID: 344154016}
-  player_health: {fileID: 0}
+  player: {fileID: 0}
   Armor: 0
   nowBlood: 0
   maxBlood: 0
@@ -2604,6 +2614,7 @@ MonoBehaviour:
   beHit: 0
   timer: 0
   temp: 0
+  attackValue: 10
   eventCheck: 1
 --- !u!1 &1988076408
 GameObject:

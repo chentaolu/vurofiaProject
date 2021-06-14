@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour {
-    public int nowLevel = 1;
-    public void nextLevel ()
+    public static int nowLevel = 1;
+    public static void nextLevel ()
     {
-        this.nowLevel = this.nowLevel + 1;
+        nowLevel = nowLevel + 1;
     }
 }

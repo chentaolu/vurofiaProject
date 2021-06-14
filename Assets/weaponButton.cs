@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class weaponButton : MonoBehaviour
 {
-	public Level level;
 	public GameObject button;
 	public Sprite targetImage;
 	public List<Sprite> spritesList;
@@ -46,7 +45,7 @@ public class weaponButton : MonoBehaviour
 	public void changeItems()
 	{
 		index++;
-		if (index > level.nowLevel)
+		if (index > Level.nowLevel)
         {
 			index = 0;
         }
