@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
     public Player_health player_health;
@@ -26,6 +27,10 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         weaponAttackValue = FindUsingWeapon().attackValue;
+        if(Player_health.currentHealth <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public List<WeaponConfig> getCanUseList() {
