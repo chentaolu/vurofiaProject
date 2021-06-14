@@ -15,7 +15,7 @@ public class BuySkorpion_VZ : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        SkorpionVZConfig.isWeaponCanUse = hasBeenBuy;
 	}
 
     public void OnBtn()

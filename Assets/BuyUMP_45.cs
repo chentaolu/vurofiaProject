@@ -15,7 +15,8 @@ public class BuyUMP_45 : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {	
+	void Update () {
+        UMP45Config.isWeaponCanUse = hasBeenBuy;
 	}
 
     public void OnBtn()
@@ -31,6 +32,7 @@ public class BuyUMP_45 : MonoBehaviour {
                 ScoreBoard.Score -= 100;
                 GameObject.Find("BuyUMP45").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
                 hasBeenBuy = true;
+                
             }
         }
         else

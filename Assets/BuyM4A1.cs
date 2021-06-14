@@ -16,7 +16,7 @@ public class BuyM4A1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        M4A1Config.isWeaponCanUse = hasBeenBuy;
 	}
 
     public void OnBtn()

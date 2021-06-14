@@ -16,7 +16,7 @@ public class BuyAK47 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        Ak_47Config.isWeaponCanUse = hasBeenBuy;
 	}
 
     public void OnBtn()
