@@ -15,6 +15,7 @@ public class weaponButton : MonoBehaviour
 	public M4A1Config m4A1Config;
 	public SkorpionVZConfig skorpionVZConfig;
 	public UMP45Config uMP45Config;
+	public CannonConfig cannonConfig;
 	public int canUseListLength = 1;
 
 	Sprite Knife;
@@ -22,6 +23,7 @@ public class weaponButton : MonoBehaviour
 	Sprite Skorpion_VZ;
 	Sprite M4A1;
 	Sprite Ak_47;
+	Sprite Cannon;
 
 	// Use this for initialization
 	void Start()
@@ -31,6 +33,8 @@ public class weaponButton : MonoBehaviour
 		Skorpion_VZ = Resources.Load<Sprite>("weapon/Skorpion_VZ");
 		M4A1 = Resources.Load<Sprite>("weapon/M4A1");
 		Ak_47 = Resources.Load<Sprite>("weapon/Ak-47");
+		Cannon = Resources.Load<Sprite>("weapon/Cannon");
+
 		initSpritesList();
 		targetImage = spritesList[0];
 		button = GameObject.Find("WeaponButton");
@@ -47,12 +51,19 @@ public class weaponButton : MonoBehaviour
 	{
 		spritesList.Clear();
 		spritesList.Add(Knife);
-		//spritesList.Add(Ak_47);
 	}
 
 	void updateSpritesList()
     {
 		List<WeaponConfig> canUseList = playerScript.getCanUseList();
+		if (canUseList.Count > 1)
+		{
+			print("success");
+		}
+		else
+        {
+			print("fail");
+        }
 		if (canUseList.Count > canUseListLength)
         {
 			canUseListLength = canUseList.Count;
@@ -73,6 +84,10 @@ public class weaponButton : MonoBehaviour
 				else if (canUseList[i].GetType().Equals(typeof(SkorpionVZConfig)))
                 {
 					spritesList.Add(Skorpion_VZ);
+                }
+				else if (canUseList[i].GetType().Equals(typeof(CannonConfig)))
+                {
+					spritesList.Add(Cannon);
                 }
 			}
         }
@@ -116,6 +131,10 @@ public class weaponButton : MonoBehaviour
 		else if (spritesList[index] == Skorpion_VZ)
         {
 			playerScript.changeWeapon(skorpionVZConfig);
+        }
+		else if (spritesList[index] == Cannon)
+        {
+			playerScript.changeWeapon(cannonConfig);
         }
 	}
 }

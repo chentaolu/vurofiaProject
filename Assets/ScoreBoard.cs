@@ -11,7 +11,7 @@ public class ScoreBoard : MonoBehaviour
 {
 
     //宣告分數參數
-    public static int Score = 10000;
+    public static int Score = 1000000;
 
     //宣告文字UI
     public Text ShowScore;
