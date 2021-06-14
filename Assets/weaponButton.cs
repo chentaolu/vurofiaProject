@@ -15,6 +15,7 @@ public class weaponButton : MonoBehaviour
 	public M4A1Config m4A1Config;
 	public SkorpionVZConfig skorpionVZConfig;
 	public UMP45Config uMP45Config;
+	public int canUseListLength = 1;
 
 	Sprite Knife;
 	Sprite UMP_45;
@@ -52,19 +53,9 @@ public class weaponButton : MonoBehaviour
 	void updateSpritesList()
     {
 		List<WeaponConfig> canUseList = playerScript.getCanUseList();
-		if (canUseList.Count == 1)
+		if (canUseList.Count > canUseListLength)
         {
-			print("only knife");
-		}
-        else if (canUseList.Count > 1)
-        {
-            /*foreach(WeaponConfig weapon in canUseList)
-            {
-                print(weapon.attackValue);
-            }*/
-        }
-		if (canUseList.Count != 0)
-        {
+			canUseListLength = canUseList.Count;
 			for(int i = 0; i < canUseList.Count; i++)
 			{
 				if (canUseList[i].GetType().Equals(typeof(M4A1Config)))
@@ -90,12 +81,14 @@ public class weaponButton : MonoBehaviour
 	public void changeItems()
 	{
 		index++;
+		print(spritesList.Count);
 		if (index > spritesList.Count - 1)
         {
 			index = 0;
         }
 
 		targetImage = spritesList[index];
+		print(targetImage);
 
 		if (index == 0)
         {
