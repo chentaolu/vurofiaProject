@@ -930,7 +930,7 @@ MonoBehaviour:
   enemy: {fileID: 93850243}
   health: {fileID: 477194004}
   pressButton: 0
-  player: {fileID: 0}
+  player: {fileID: 892779980}
 --- !u!114 &489412087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2757,6 +2757,7 @@ MonoBehaviour:
   m4A1Config: {fileID: 124757916}
   skorpionVZConfig: {fileID: 1685536571}
   uMP45Config: {fileID: 754991236}
+  canUseListLength: 1
 --- !u!114 &2054834622
 MonoBehaviour:
   m_ObjectHideFlags: 0
