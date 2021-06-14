@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -285,7 +285,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  level: {fileID: 344154016}
   player: {fileID: 892779980}
   Armor: 0
   nowBlood: 0
@@ -511,7 +510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 0
-  currentHealth: 0
   precentHealth: 0
   HealthBar: {fileID: 1617696101}
   Hurt: {fileID: 1325822087}
@@ -545,7 +543,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cb605adc145d64d9c4d54f5523b73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nowLevel: 1
 --- !u!65 &344154017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2604,7 +2601,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  level: {fileID: 344154016}
   player: {fileID: 0}
   Armor: 0
   nowBlood: 0
@@ -2740,11 +2736,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00b525b47546422a995173be3f3ccd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 344154016}
   button: {fileID: 2054834619}
   targetImage: {fileID: 0}
   spritesList: []
   index: 0
+  playerScript: {fileID: 892779980}
+  knifeConfig: {fileID: 559751567}
+  ak_47Config: {fileID: 449020714}
+  m4A1Config: {fileID: 124757916}
+  skorpionVZConfig: {fileID: 1685536571}
+  uMP45Config: {fileID: 754991236}
 --- !u!114 &2054834622
 MonoBehaviour:
   m_ObjectHideFlags: 0
