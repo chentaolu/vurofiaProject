@@ -17,6 +17,7 @@ public class PlayerScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
         weaponConfigs.Add(ak47_config);
         weaponConfigs.Add(m4a1_config);
         weaponConfigs.Add(ump45config);
@@ -37,7 +38,7 @@ public class PlayerScript : MonoBehaviour {
         List<WeaponConfig> canUseWeaponList = new List<WeaponConfig>();
         foreach(WeaponConfig weapon in weaponConfigs)
         {
-            if (weapon.isWeaponCanUse)
+            if (weapon.getBoolCanUseOrNot())
             {
                 canUseWeaponList.Add(weapon);
             }
