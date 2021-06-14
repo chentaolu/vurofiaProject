@@ -28,7 +28,7 @@ public class BuyCannon : MonoBehaviour
         {
             if (ScoreBoard.Score < 100000)
             {
-                GameObject.Find("BuyCannon").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "";
+                GameObject.Find("BuyCannon").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "吃屎";
             }
             else
             {

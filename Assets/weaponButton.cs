@@ -16,7 +16,7 @@ public class weaponButton : MonoBehaviour
 	public SkorpionVZConfig skorpionVZConfig;
 	public UMP45Config uMP45Config;
 	public CannonConfig cannonConfig;
-	public int canUseListLength = 1;
+	public int canUseListLength = 0;
 
 	Sprite Knife;
 	Sprite UMP_45;
@@ -48,10 +48,10 @@ public class weaponButton : MonoBehaviour
 	}
 
 	void initSpritesList()
-	{
+    {
 		spritesList.Clear();
 		spritesList.Add(Knife);
-	}
+    }
 
 	void updateSpritesList()
     {
@@ -62,6 +62,10 @@ public class weaponButton : MonoBehaviour
 			for(int i = 0; i < canUseList.Count; i++)
 			{
 				if (canUseList[i].GetType().Equals(typeof(M4A1Config)))
+                {
+					spritesList.Add(Knife);
+				}
+				else if (canUseList[i].GetType().Equals(typeof(M4A1Config)))
                 {
 					spritesList.Add(M4A1);
                 }

@@ -12,7 +12,6 @@ public class MedicineCabinetTextScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(MedicineCabinetScript.amount);
         GetComponent<Text>().text = MedicineCabinetScript.amount.ToString();
 	}
 }

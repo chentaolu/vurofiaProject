@@ -8,9 +8,9 @@ public class CannonConfig : WeaponConfig
     public static bool isWeaponCanUse = false;
     void Start()
     {
-        x = -0.0047389;
-        y = -0.061491;
-        z = 0.017445;
+        x = -1.8727;
+        y = 1.034474;
+        z = -4.18871;
         attackValue = 10000;
         usingNow = false;
         GoOutOfRange();
