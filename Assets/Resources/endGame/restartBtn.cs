@@ -21,5 +21,9 @@ public class restartBtn : MonoBehaviour {
         Player_health.currentHealth = 100;
         ScoreBoard.Score = 0;
         SceneManager.LoadScene(0);
+        Ak_47Config.isWeaponCanUse = false;
+        M4A1Config.isWeaponCanUse = false;
+        SkorpionVZConfig.isWeaponCanUse = false;
+        UMP45Config.isWeaponCanUse = false;
     }
 }

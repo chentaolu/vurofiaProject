@@ -6,29 +6,21 @@ using UnityEngine.SceneManagement;
 public class PlayerScript : MonoBehaviour {
     public Player_health player_health;
     public int weaponAttackValue;
-    public Ak_47Config ak47_config;
-    public M4A1Config m4a1_config;
-    public UMP45Config ump45config;
-    public SkorpionVZConfig skorpionVZConfig;
-    public KnifeConfig KnifeConfig;
     public hitButton hitButton;
     public WeaponConfig nowWeapon;
     public List<WeaponConfig> weaponConfigs;
 
     // Use this for initialization
     void Start () {
-
-        weaponConfigs.Add(ak47_config);
-        weaponConfigs.Add(m4a1_config);
-        weaponConfigs.Add(ump45config);
-        weaponConfigs.Add(skorpionVZConfig);
-        weaponConfigs.Add(KnifeConfig);
+        weaponAttackValue = FindUsingWeapon().getValue();
+        print(weaponAttackValue);
     }
 	
 	// Update is called once per frame
 	void Update () {
-        weaponAttackValue = FindUsingWeapon().attackValue;
-        if(Player_health.currentHealth <= 0)
+        weaponAttackValue = FindUsingWeapon().getValue();
+        
+        if (Player_health.currentHealth <= 0)
         {
             SceneManager.LoadScene(2);
         }
@@ -58,7 +50,15 @@ public class PlayerScript : MonoBehaviour {
 
     public WeaponConfig FindUsingWeapon()
     {
-        return weaponConfigs.Find(x => x.usingNow);
+        WeaponConfig usingWeapon = null;
+        foreach (WeaponConfig weapon in weaponConfigs)
+        {
+            if (weapon.usingNow)
+            {
+                usingWeapon = weapon;
+            }
+        }
+        return usingWeapon;
     }
 
     public void changeWeapon(WeaponConfig wannaChange)
@@ -68,10 +68,12 @@ public class PlayerScript : MonoBehaviour {
             if(weapon.Equals(wannaChange))
             {
                 weapon.usingNow = true;
+                weapon.GoToRightLocation();
             }
             else
             {
                 weapon.usingNow = false;
+                weapon.GoOutOfRange();
             }
         }
     }

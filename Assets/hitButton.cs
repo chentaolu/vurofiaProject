@@ -7,6 +7,7 @@ public class hitButton : MonoBehaviour {
     public Enemy enemy;
     public health health;
     public bool pressButton = false;
+    public PlayerScript player;
 
     public void Update()
     {
@@ -17,7 +18,8 @@ public class hitButton : MonoBehaviour {
     {
         enemy.beHit = true;
         pressButton = true;
-        enemy.nowBlood = enemy.nowBlood - 25;
+        enemy.nowBlood = enemy.nowBlood - player.weaponAttackValue;
+        
         enemy.precentBlood = enemy.precentBlood - ((25 / enemy.maxBlood) * 100);
     }
 

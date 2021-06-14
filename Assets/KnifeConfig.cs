@@ -7,9 +7,13 @@ public class KnifeConfig : WeaponConfig {
     
     public void Start()
     {
+        x = -0.0169727;
+        y = 0.01034474;
+        z = -0.0118871;
         attackValue = 20;
         isWeaponCanUse = true;
         usingNow = true;
+        GoOutOfRange();
     }
     public override bool getBoolCanUseOrNot()
     {
