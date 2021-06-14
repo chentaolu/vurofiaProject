@@ -16,11 +16,11 @@ public abstract class WeaponConfig : MonoBehaviour {
 
     public void GoToRightLocation()
     {
-        gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, new Vector3((float)x, (float)y, (float)z), 1);
+        gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, new Vector3((float)x, (float)y, (float)z), 1000);
     }
 
     public void GoOutOfRange()
     {
-        gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, new Vector3(3000, 3000, 3000), 1);
+        gameObject.transform.localPosition = Vector3.MoveTowards(gameObject.transform.localPosition, new Vector3(3000, 3000, 3000), 1000);
     }
 }

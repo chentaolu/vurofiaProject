@@ -13,7 +13,6 @@ public class KnifeConfig : WeaponConfig {
         attackValue = 20;
         isWeaponCanUse = true;
         usingNow = true;
-        GoOutOfRange();
     }
     public override bool getBoolCanUseOrNot()
     {
