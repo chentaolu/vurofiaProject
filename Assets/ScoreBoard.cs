@@ -11,7 +11,7 @@ public class ScoreBoard : MonoBehaviour
 {
 
     //宣告分數參數
-    public static int Score = 0;
+    public static int Score = 10000;
 
     //宣告文字UI
     public Text ShowScore;
@@ -19,10 +19,6 @@ public class ScoreBoard : MonoBehaviour
     public static void addScore(int reward)
     {
         Score = Score + reward;
-    }
-
-    private void Start()
-    {
     }
 
     void Update()

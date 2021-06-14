@@ -46,11 +46,20 @@ public class weaponButton : MonoBehaviour
 	{
 		spritesList.Clear();
 		spritesList.Add(Knife);
+		//spritesList.Add(Ak_47);
 	}
 
 	void updateSpritesList()
     {
 		List<WeaponConfig> canUseList = playerScript.getCanUseList();
+		if (canUseList.Count == 1)
+        {
+			print("only knife");
+		}
+        else if (canUseList.Count > 1)
+        {
+			print("buying success");
+        }
 		if (canUseList.Count != 0)
         {
 			for(int i = 0; i < canUseList.Count; i++)
