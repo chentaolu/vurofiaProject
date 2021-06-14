@@ -8,7 +8,10 @@ public class BuyUMP_45 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		if(hasBeenBuy)
+        {
+            GameObject.Find("BuyUMP45").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
+        }
 	}
 	
 	// Update is called once per frame
@@ -21,7 +24,7 @@ public class BuyUMP_45 : MonoBehaviour {
         {
             if (ScoreBoard.Score < 100)
             {
-
+                GameObject.Find("BuyUMP45").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "100你也要搶乞丐";
             }
             else
             {

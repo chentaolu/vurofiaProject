@@ -8,7 +8,10 @@ public class BuyAK47 : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        if (hasBeenBuy)
+        {
+            GameObject.Find("BuyAK47").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,7 +25,7 @@ public class BuyAK47 : MonoBehaviour {
         {
             if (ScoreBoard.Score < 1000)
             {
-
+                GameObject.Find("BuyAK47").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "你騙不到老闆";
             }
             else
             {

@@ -8,7 +8,10 @@ public class BuyM4A1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		if (hasBeenBuy)
+        {
+            GameObject.Find("BuyM4A1").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "Sold Out!";
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,7 +25,7 @@ public class BuyM4A1 : MonoBehaviour {
         {
             if (ScoreBoard.Score < 200)
             {
-
+                GameObject.Find("BuyM4A1").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "你以為點了就會發給你嗎";
             }
             else
             {
