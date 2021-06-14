@@ -243,6 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   player: {fileID: 892779980}
+  scoreBoard: {fileID: 1265646797}
   Armor: 0
   nowBlood: 0
   maxBlood: 0
@@ -2181,7 +2182,7 @@ GameObject:
   - component: {fileID: 1265646798}
   - component: {fileID: 1265646797}
   m_Layer: 5
-  m_Name: SocreBoard
+  m_Name: ScoreBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3192,6 +3193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   player: {fileID: 0}
+  scoreBoard: {fileID: 0}
   Armor: 0
   nowBlood: 0
   maxBlood: 0
@@ -3328,6 +3330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 2054834619}
   targetImage: {fileID: 0}
+  spritesList: []
   index: 0
   playerScript: {fileID: 892779980}
   knifeConfig: {fileID: 559751567}

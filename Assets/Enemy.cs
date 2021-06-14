@@ -6,6 +6,7 @@ using System.Threading;
 public class Enemy : MonoBehaviour {
     public Animator animator;
     public PlayerScript player;
+    public ScoreBoard scoreBoard;
     public int Armor;
     public float nowBlood;
     public float maxBlood;
@@ -65,6 +66,7 @@ public class Enemy : MonoBehaviour {
             updateToNextLevel();
             this.timer = 0;
             player.playerInToNextLevel();
+            ScoreBoard.addScore(50);
         }
         else
         {
