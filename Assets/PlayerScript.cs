@@ -42,10 +42,10 @@ public class PlayerScript : MonoBehaviour {
 
     public void playerInToNextLevel()
     {
-        player_health.currentHealth += 30;
-        if (player_health.currentHealth > 100)
+        Player_health.currentHealth += 30;
+        if (Player_health.currentHealth > 100)
         {
-            player_health.currentHealth = 100;
+            Player_health.currentHealth = 100;
         }
     }
 

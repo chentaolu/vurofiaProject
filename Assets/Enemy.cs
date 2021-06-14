@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        attackValue = (float)(10 * (((float)Level.nowLevel * 0.25) + 1));
         this.timer += Time.deltaTime;
         float second = this.timer % 60 + 1;
         float temp = second % attackSecond();
@@ -39,7 +40,7 @@ public class Enemy : MonoBehaviour {
         {
             if(temp < 0.0165 + (float)Level.nowLevel * 0.0003){
                 this.animator.SetBool("attackOrNot", true);
-                player.player_health.currentHealth -= attackValue;
+                Player_health.currentHealth -= attackValue;
             }              
         }
         else
@@ -85,7 +86,6 @@ public class Enemy : MonoBehaviour {
 
     public void updateToNextLevel()
     {
-        attackValue = (float)(10 * (((float)Level.nowLevel * 0.25) + 1));
         this.maxBlood = 100 * Level.nowLevel;
         this.nowBlood = this.maxBlood;
         precentBlood = this.nowBlood / this.nowBlood * 100;

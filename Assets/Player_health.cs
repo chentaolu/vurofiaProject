@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Player_health : MonoBehaviour {
 	public float maxHealth;
-	public float currentHealth;
+	public static float currentHealth = 100;
 	public float precentHealth;
 	public RectTransform HealthBar,Hurt;
 	// Use this for initialization
 	void Start () {
 		this.maxHealth = 100;
-		this.currentHealth = this.maxHealth;
 	}
 	
 	// Update is called once per frame
