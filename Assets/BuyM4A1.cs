@@ -23,7 +23,7 @@ public class BuyM4A1 : MonoBehaviour {
     {
         if (!hasBeenBuy)
         {
-            if (ScoreBoard.Score < 200)
+            if (ScoreBoard.Score < 400)
             {
                 GameObject.Find("BuyM4A1").GetComponent<Button>().transform.Find("Text").GetComponent<Text>().text = "你以為點了就會發給你嗎";
             }
