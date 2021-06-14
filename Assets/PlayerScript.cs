@@ -25,7 +25,7 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        weaponAttackValue = FindUsingWeapon().attackValue;
     }
 
     public List<WeaponConfig> getCanUseList() {
@@ -46,6 +46,26 @@ public class PlayerScript : MonoBehaviour {
         if (player_health.currentHealth > 100)
         {
             player_health.currentHealth = 100;
+        }
+    }
+
+    public WeaponConfig FindUsingWeapon()
+    {
+        return weaponConfigs.Find(x => x.usingNow);
+    }
+
+    public void changeWeapon(WeaponConfig wannaChange)
+    {
+        foreach(WeaponConfig weapon in weaponConfigs)
+        {
+            if(weapon.Equals(wannaChange))
+            {
+                weapon.usingNow = true;
+            }
+            else
+            {
+                weapon.usingNow = false;
+            }
         }
     }
 }
