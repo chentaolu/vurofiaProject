@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ak_47Config : WeaponConfig
 {
+    public static bool isWeaponCanUse = false;
     public void Start()
     {
         attackValue = 125;
@@ -12,6 +13,12 @@ public class Ak_47Config : WeaponConfig
 
     public void Update()
     {
-        isWeaponCanUse = BuyAK47.hasBeenBuy;
+
+    }
+
+    public override bool getBoolCanUseOrNot()
+    {
+        bool result = isWeaponCanUse;
+        return result;
     }
 }

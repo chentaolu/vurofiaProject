@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UMP45Config : WeaponConfig {
+    public static bool isWeaponCanUse = false;
     public void Start()
     {
         attackValue = 30;
@@ -11,6 +12,12 @@ public class UMP45Config : WeaponConfig {
 
     public void Update()
     {
-        isWeaponCanUse = BuyUMP_45.hasBeenBuy;
+
+    }
+
+    public override bool getBoolCanUseOrNot()
+    {
+        bool result = isWeaponCanUse;
+        return result;
     }
 }

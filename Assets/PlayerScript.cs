@@ -40,6 +40,7 @@ public class PlayerScript : MonoBehaviour {
         {
             if (weapon.getBoolCanUseOrNot())
             {
+                //print(weapon.attackValue);
                 canUseWeaponList.Add(weapon);
             }
         }

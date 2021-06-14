@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SkorpionVZConfig : WeaponConfig {
+    public static bool isWeaponCanUse = false;
     public void Start()
     {
         attackValue = 70;
@@ -11,6 +12,12 @@ public class SkorpionVZConfig : WeaponConfig {
 
     public void Update()
     {
-        isWeaponCanUse = BuySkorpion_VZ.hasBeenBuy;
+        
+    }
+
+    public override bool getBoolCanUseOrNot()
+    {
+        bool result = isWeaponCanUse;
+        return result;
     }
 }

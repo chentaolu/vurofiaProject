@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class M4A1Config : WeaponConfig {
+
+    public static bool isWeaponCanUse = false;
     public void Start()
     {
         attackValue = 100;
@@ -11,6 +13,12 @@ public class M4A1Config : WeaponConfig {
 
     public void Update()
     {
-        isWeaponCanUse = BuyM4A1.hasBeenBuy;
+
+    }
+
+    public override bool getBoolCanUseOrNot()
+    {
+        bool result = isWeaponCanUse;
+        return result;
     }
 }

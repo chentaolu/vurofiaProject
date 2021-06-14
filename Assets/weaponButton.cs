@@ -58,7 +58,10 @@ public class weaponButton : MonoBehaviour
 		}
         else if (canUseList.Count > 1)
         {
-			print("buying success");
+            /*foreach(WeaponConfig weapon in canUseList)
+            {
+                print(weapon.attackValue);
+            }*/
         }
 		if (canUseList.Count != 0)
         {
